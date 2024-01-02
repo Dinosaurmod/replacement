@@ -141,10 +141,20 @@ export default defineMessages({
         description: 'Tag for filtering a library for guns',
         id: 'gui.libraryTags.guns'
     },
+    dinosaurmod: {
+        defaultMessage: 'DinosaurMod',
+        description: 'Tag for filtering a library by DinosaurMod',
+        id: 'gui.libraryTags.dinosaurmod'
+    },
     penguinmod: {
         defaultMessage: 'PenguinMod',
         description: 'Tag for filtering a library by PenguinMod',
         id: 'gui.libraryTags.penguinmod'
+    },
+    forbidden: {
+        defaultMessage: 'Forbidden Extensions',
+        description: 'Tag for filtering a library by forbidden extensions',
+        id: 'gui.libraryTags.forbidden'
     },
     scratch: {
         defaultMessage: 'Scratch',
@@ -191,14 +201,9 @@ export default defineMessages({
         description: 'Tag for filtering a library by hardware.',
         id: 'gui.libraryTags.hardware'
     },
-    library: {
+    collections: {
         defaultMessage: 'Collections',
-        description: 'Tag for filtering a library by extension collections.',
-        id: 'gui.libraryTags.library'
-    },
-    extcreate: {
-        defaultMessage: 'Extension Creators',
-        description: 'Tag for finding all extension creator programs / website',
-        id: 'gui.libraryTags.extcreate'
+        description: 'Tag for filtering a library by collections.',
+        id: 'gui.libraryTags.collections'
     },
 });

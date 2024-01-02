@@ -48,9 +48,9 @@ import styles from './interface.css';
 import restore from './restore.js';
 
 const urlparams = new URLSearchParams(location.search);
-const restoring = urlparams.get('restore');
-const restoreHandler = urlparams.get('handler');
-if (String(restoring) === 'true') {
+const restoring = urlparams.get("restore");
+const restoreHandler = urlparams.get("handler");
+if (String(restoring) === "true") {
     // console.log(restore)
     restore(restoreHandler);
 }
@@ -67,34 +67,9 @@ const handleClickAddonSettings = () => {
     window.open(`${process.env.ROOT}${path}`);
 };
 
-const xmlEscape = function (unsafe) {
-    return unsafe.replace(/[<>&'"]/g, c => {
-        switch (c) {
-        case '<': return '&lt;';
-        case '>': return '&gt;';
-        case '&': return '&amp;';
-        case '\'': return '&apos;';
-        case '"': return '&quot;';
-        }
-    });
-};
-const formatProjectTitle = _title => {
-    const title = xmlEscape(String(_title));
-    const emojiRegex = /:(\w+):/g;
-    return title.replace(emojiRegex, match => {
-        const emojiName = match.replace(/:/gmi, '');
-        return `<img
-            src="https://library.penguinmod.com/files/emojis/${emojiName}.png"
-            alt=":${emojiName}:"
-            title=":${emojiName}:"
-            style="width:1.75rem;vertical-align: middle;"
-        >`;
-    });
-};
-
 const messages = defineMessages({
     defaultTitle: {
-        defaultMessage: 'A mod of TurboWarp',
+        defaultMessage: 'A mod of Penguinmod',
         description: 'Title of homepage',
         id: 'tw.guiDefaultTitle'
     }
@@ -140,8 +115,8 @@ const Footer = () => (
             <div className={styles.footerText}>
                 <FormattedMessage
                     // eslint-disable-next-line max-len
-                    defaultMessage="PenguinMod and TurboWarp are not affiliated with Scratch, the Scratch Team, or the Scratch Foundation."
-                    description="Disclaimer that PenguinMod and TurboWarp are not connected to Scratch"
+                    defaultMessage="Dinosaurmod, PenguinMod and TurboWarp are not affiliated with Scratch, the Scratch Team, or the Scratch Foundation."
+                    description="Disclaimer that Dinosaurmod, PenguinMod and TurboWarp are not connected to Scratch"
                     id="tw.footer.disclaimer"
                 />
             </div>
@@ -154,9 +129,9 @@ const Footer = () => (
                             id="tw.footer.credits"
                         />
                     </a>
-                    <a href="https://penguinmod.com/donate">
+                    <a href="https://github.com/sponsors/GarboMuffin">
                         <FormattedMessage
-                            defaultMessage="Donate"
+                            defaultMessage="Donate to TurboWarp Developer"
                             description="Donation link in footer"
                             id="tw.footer.donate"
                         />
@@ -194,20 +169,6 @@ const Footer = () => (
                     </a>
                 </div>
                 <div className={styles.footerSection}>
-                    <a href="terms.html">
-                        <FormattedMessage
-                            defaultMessage="Terms of Service"
-                            description="Link to Terms of Service"
-                            id="pm.terms"
-                        />
-                    </a>
-                    <a href="privacy.html">
-                        <FormattedMessage
-                            defaultMessage="Privacy Policy"
-                            description="Link to privacy policy"
-                            id="tw.privacy"
-                        />
-                    </a>
                     <a href="https://discord.gg/NZ9MBMYTZh">
                         <FormattedMessage
                             defaultMessage="Feedback & Bugs"
@@ -222,72 +183,41 @@ const Footer = () => (
                             id="tw.code"
                         />
                     </a>
+                    <a href="privacy.html">
+                        <FormattedMessage
+                            defaultMessage="Privacy Policy"
+                            description="Link to privacy policy"
+                            id="tw.privacy"
+                        />
+                    </a>
                 </div>
             </div>
         </div>
     </footer>
 );
 
-const monthNames = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December'
-];
-const numberSuffixes = [
-    'st',
-    'nd',
-    'rd',
-    'th',
-    'th',
-    'th',
-    'th',
-    'th',
-    'th',
-    'th'
-]
-const addNumberSuffix = num => {
-    if (!num) return `${num}`;
-    if (num < 20 && num > 10) return `${num}th`;
-    return num + numberSuffixes[(num - 1) % 10];
-};
-
 class Interface extends React.Component {
-    constructor (props) {
+    constructor(props) {
         super(props);
         this.handleUpdateProjectTitle = this.handleUpdateProjectTitle.bind(this);
     }
-    componentDidUpdate (prevProps) {
+    componentDidUpdate(prevProps) {
         if (prevProps.isLoading && !this.props.isLoading) {
             loadServiceWorker();
         }
     }
-    handleUpdateProjectTitle (title, isDefault) {
+    handleUpdateProjectTitle(title, isDefault) {
         if (isDefault || !title) {
-            document.title = `PenguinMod - ${this.props.intl.formatMessage(messages.defaultTitle)}`;
+            document.title = `DinosaurMod - ${this.props.intl.formatMessage(messages.defaultTitle)}`;
         } else {
-            document.title = `${title} - PenguinMod`;
+            document.title = `${title} - DinosaurMod`;
         }
     }
-    copyProjectLink (id) {
-        if ('clipboard' in navigator && 'writeText' in navigator.clipboard) {
-            navigator.clipboard.writeText(`https://projects.penguinmod.com/${id}`);
-        }
-    }
-    render () {
+    render() {
         const {
             /* eslint-disable no-unused-vars */
             intl,
             hasCloudVariables,
-            title,
             description,
             extraProjectInfo,
             remixedProjectInfo,
@@ -302,15 +232,6 @@ class Interface extends React.Component {
         } = this.props;
         const isHomepage = isPlayerOnly && !isFullScreen;
         const isEditor = !isPlayerOnly;
-        const isUpdated = extraProjectInfo.isUpdated;
-        const projectReleaseYear = extraProjectInfo.releaseDate.getFullYear();
-        const projectReleaseMonth = monthNames[extraProjectInfo.releaseDate.getMonth()];
-        const projectReleaseDay = addNumberSuffix(extraProjectInfo.releaseDate.getDate());
-        const projectReleaseHour = (extraProjectInfo.releaseDate.getHours() % 12) + 1;
-        const projectReleaseHalf = extraProjectInfo.releaseDate.getHours() > 11
-            ? 'PM'
-            : 'AM';
-        const projectReleaseMinute = extraProjectInfo.releaseDate.getMinutes();
         return (
             <div
                 className={classNames(styles.container, {
@@ -337,28 +258,6 @@ class Interface extends React.Component {
                     }) : null}
                 >
                     {isHomepage && announcement ? <DOMElementRenderer domElement={announcement} /> : null}
-                    {isHomepage && projectId !== '0' && title && extraProjectInfo && extraProjectInfo.author && <div className={styles.projectDetails}>
-                        <a
-                            target="_blank"
-                            href={`https://penguinmod.com/profile?user=${extraProjectInfo.author}`}
-                            rel="noreferrer"
-                        >
-                            <img
-                                className={styles.projectAuthorImage}
-                                title={extraProjectInfo.author}
-                                alt={extraProjectInfo.author}
-                                src={`https://trampoline.turbowarp.org/avatars/by-username/${extraProjectInfo.author}`}
-                            />
-                        </a>
-                        <div className={styles.projectMetadata}>
-                            <h2 dangerouslySetInnerHTML={{__html: formatProjectTitle(title)}} />
-                            <p>by <a
-                                target="_blank"
-                                href={`https://penguinmod.com/profile?user=${extraProjectInfo.author}`}
-                                rel="noreferrer"
-                            >{extraProjectInfo.author}</a></p>
-                        </div>
-                    </div>}
                     <GUI
                         onClickAddonSettings={handleClickAddonSettings}
                         onClickTheme={onClickTheme}
@@ -369,21 +268,27 @@ class Interface extends React.Component {
                     />
                     {isHomepage ? (
                         <React.Fragment>
+                            <div className={styles.section}>
+                                <ProjectInput />
+                            </div>
+                            <div className={styles.remixWarningBox}>
+                                    <p>Do not put in a unapproved or non-existent project id otherwise loading projects will no longer work</p>
+                            </div>
                             {/* project not approved message */}
                             {(!extraProjectInfo.accepted) && (
                                 <div className={styles.remixWarningBox}>
-                                    <p>This project is not approved. Be careful when running this project.</p>
+                                    <p>This project is not approved or doesn't exist.</p>
+                                    <p>Please refresh and go here <a href='https://dinosaurmod.github.io'>DinosaurMod</a></p>
                                 </div>
                             )}
                             {/* remix info */}
                             {(extraProjectInfo.isRemix && remixedProjectInfo.loaded) && (
                                 <div className={styles.unsharedUpdate}>
-                                    <div style={{display: 'flex', flexDirection: 'row'}}>
+                                    <div style={{ display: "flex", flexDirection: "row" }}>
                                         <a
-                                            style={{height: '32px'}}
+                                            style={{ height: "32px" }}
                                             target="_blank"
                                             href={`https://penguinmod.com/profile?user=${remixedProjectInfo.author}`}
-                                            rel="noreferrer"
                                         >
                                             <img
                                                 className={styles.remixAuthorImage}
@@ -397,7 +302,6 @@ class Interface extends React.Component {
                                                 <a
                                                     target="_blank"
                                                     href={`https://penguinmod.com/profile?user=${remixedProjectInfo.author}`}
-                                                    rel="noreferrer"
                                                 >
                                                     {remixedProjectInfo.author}
                                                 </a>
@@ -429,66 +333,31 @@ class Interface extends React.Component {
                                     />
                                 </div>
                             ) : null}
-                            <VoteFrame
-                                id={projectId}
-                                darkmode={this.props.isDark}
-                            />
-                            {projectId !== '0' && (
-                                <div>
-                                    {`${isUpdated ? 'Updated' : 'Uploaded'} ${projectReleaseMonth} ${projectReleaseDay} ${projectReleaseYear} at ${projectReleaseHour}:${projectReleaseMinute < 10 ? '0' : ''}${projectReleaseMinute} ${projectReleaseHalf}`}
-                                    <div className={styles.centerSector}>
-                                        <button
-                                            onClick={() => this.copyProjectLink(projectId)}
-                                            className={styles.shareLink}
-                                        >
-                                            <img
-                                                src="/share_project.png"
-                                                alt=">"
-                                            />
-                                            {'Copy Link'}
-                                        </button>
-                                        {extraProjectInfo.author && (
-                                            <a
-                                                target="_blank"
-                                                rel="noreferrer"
-                                                href={`https://penguinmod.com/profile?user=${extraProjectInfo.author}`}
-                                            >
-                                                {`View other projects by ${extraProjectInfo.author}`}
-                                            </a>
-                                        )}
-                                        <a
-                                            target="_blank"
-                                            rel="noreferrer"
-                                            href={`https://penguinmod.com/report?type=project&id=${projectId}`}
-                                            className={styles.reportLink}
-                                        >
-                                            <img
-                                                src="/report_flag.png"
-                                                alt="!"
-                                            />
-                                            {'Report'}
-                                        </a>
-                                    </div>
-                                </div>
+                            <VoteFrame id={projectId} darkmode={this.props.isDark}></VoteFrame>
+                            {extraProjectInfo.author && (
+                                <a
+                                    target="_blank"
+                                    href={`https://penguinmod.com/profile?user=${extraProjectInfo.author}`}
+                                >
+                                    View other projects by {extraProjectInfo.author}
+                                </a>
                             )}
-                            {/* this is pretty pointless now that we have the home page... */}
-                            {/* <div className={styles.section}>
+                            <div className={styles.section}>
                                 <p>
                                     <FormattedMessage
                                         // eslint-disable-next-line max-len
-                                        defaultMessage="PenguinMod is a mod of TurboWarp to add new blocks and features either in extensions or in PenguinMod's main toolbox. TurboWarp is a Scratch mod that compiles projects to JavaScript to make them run really fast. Try it out by choosing an uploaded project below or making your own in the editor."
+                                        defaultMessage="Dinosaurmod is a mod of Penguinmod that has added new blocks and features in extensions or in Dinosaurmod's main toolbox. Penguinmod is a cool mod of turbowarp where you can share your projects. TurboWarp is a Scratch mod that compiles projects to JavaScript to make them run really fast. Try it out by choosing an uploaded project below or making your own in the editor."
                                         description="Description of PenguinMod and TurboWarp"
                                         id="tw.home.description"
                                     />
                                 </p>
-                            </div> */}
+                            </div>
                             <div className={styles.section}>
                                 <FeaturedProjects />
                             </div>
                             <a
                                 target="_blank"
                                 href="https://penguinmod.com/search?q=all:projects"
-                                rel="noreferrer"
                             >
                                 See more projects
                             </a>
@@ -517,9 +386,7 @@ Interface.propTypes = {
         isRemix: PropTypes.bool,
         remixId: PropTypes.number,
         tooLarge: PropTypes.bool,
-        author: PropTypes.string,
-        releaseDate: PropTypes.shape(Date),
-        isUpdated: PropTypes.bool
+        author: PropTypes.string
     }),
     remixedProjectInfo: PropTypes.shape({
         loaded: PropTypes.bool,
@@ -537,7 +404,6 @@ Interface.propTypes = {
 const mapStateToProps = state => ({
     hasCloudVariables: state.scratchGui.tw.hasCloudVariables,
     customStageSize: state.scratchGui.customStageSize,
-    title: state.scratchGui.projectTitle,
     description: state.scratchGui.tw.description,
     extraProjectInfo: state.scratchGui.tw.extraProjectInfo,
     remixedProjectInfo: state.scratchGui.tw.remixedProjectInfo,
