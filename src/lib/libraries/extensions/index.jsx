@@ -311,6 +311,16 @@ const menuItems = [
         featured: true
     },
     {
+        name: '3D',
+        extensionId: 'jg3d',
+        iconURL: jg3dExtensionIcon,
+        tags: ['penguinmod'],
+        customInsetColor: '#B200FF',
+        insetIconURL: jg3dInsetExtensionIcon,
+        description: 'Use the magic of 3D to spice up your project.',
+        featured: true
+    },
+    {
         name: 'Files',
         extensionId: 'twFiles',
         twDeveloper: 'GarboMuffin',
@@ -382,6 +392,22 @@ const menuItems = [
         featured: true
     },
     {
+        name: 'Christmas',
+        extensionId: 'jgChristmas',
+        iconURL: defaultExtensionIcon,
+        tags: ['penguinmod'],
+        description: 'hooraye',
+        featured: true
+    },
+    {
+        name: 'Legacy Files',
+        extensionId: 'jgFiles',
+        iconURL: defaultExtensionIcon,
+        tags: ['penguinmod'],
+        description: 'Basic blocks for files. This has been replaced by the TurboWarp files extension.',
+        featured: true
+    },
+    {
         name: 'JSON',
         extensionId: 'jgJSON',
         iconURL: jgJSONExtensionIcon,
@@ -407,6 +433,26 @@ const menuItems = [
         insetIconURL: griffpatchPhysicsIcon,
         description: 'Box2D Physics extension created by Griffpatch.',
         customInsetColor: '#D9F0FF',
+        featured: true
+    },
+    {
+        name: (
+            <FormattedMessage
+                defaultMessage="OOP"
+                description="Name of OOP extension"
+                id="jwStructs.jwStructsExtension.name"
+            />
+        ),
+        extensionId: 'jwStructs',
+        tags: ['penguinmod'],
+        iconURL: jwStructsExtensionIcon,
+        description: (
+            <FormattedMessage
+                defaultMessage="Removed from list. OOP blocks. OOp is a programming paradigm that uses objects and their interactions to design applications and computer programs."
+                description="Description of OOP extension"
+                id="jwStructs.jwStructsExtension.description"
+            />
+        ),
         featured: true
     },
     {
@@ -731,6 +777,14 @@ const menuItems = [
         featured: true
     },
     {
+        name: 'the doo doo extension',
+        extensionId: 'jgDooDoo',
+        iconURL: defaultExtensionIcon,
+        tags: ['penguinmod', 'forbidden'],
+        description: 'dr bob eae',
+        featured: true
+    },
+    {
         name: 'micro:bit',
         extensionId: 'microbit',
         collaborator: 'micro:bit',
@@ -980,22 +1034,6 @@ const menuItems = [
 if (IsLocal || IsLiveTests) {
     const extras = [
         {
-            name: 'Christmas',
-            extensionId: 'jgChristmas',
-            iconURL: defaultExtensionIcon,
-            tags: ['penguinmod'],
-            description: 'hooraye',
-            featured: true
-        },
-        {
-            name: 'Legacy Files',
-            extensionId: 'jgFiles',
-            iconURL: defaultExtensionIcon,
-            tags: ['penguinmod'],
-            description: 'Basic blocks for files. This has been replaced by the TurboWarp files extension.',
-            featured: true
-        },
-        {
             name: 'Clone Communication',
             extensionId: 'jgClones',
             iconURL: jgCloneManagerExtensionIcon,
@@ -1044,26 +1082,6 @@ if (IsLocal || IsLiveTests) {
             featured: true
         },
         {
-            name: (
-                <FormattedMessage
-                    defaultMessage="OOP"
-                    description="Name of OOP extension"
-                    id="jwStructs.jwStructsExtension.name"
-                />
-            ),
-            extensionId: 'jwStructs',
-            tags: ['penguinmod'],
-            iconURL: jwStructsExtensionIcon,
-            description: (
-                <FormattedMessage
-                    defaultMessage="Removed from list. OOP blocks. OOp is a programming paradigm that uses objects and their interactions to design applications and computer programs."
-                    description="Description of OOP extension"
-                    id="jwStructs.jwStructsExtension.description"
-                />
-            ),
-            featured: true
-        },
-        {
             name: 'PenguinMod Permissions',
             extensionId: 'JgPermissionBlocks',
             iconURL: jgPermissionExtensionIcon,
@@ -1078,16 +1096,6 @@ if (IsLocal || IsLiveTests) {
             tags: ['penguinmod'],
             description: 'Test extension to see if things are possible.\nDO NOT USE THIS IN PRODUCTION as blocks are subject to change and may corrupt your projects.',
             credits: 'Some features added from LilyMakesThings, CubesterYT, TheShovel',
-            featured: true
-        },
-        {
-            name: '3D',
-            extensionId: 'jg3d',
-            iconURL: jg3dExtensionIcon,
-            tags: ['penguinmod'],
-            customInsetColor: '#B200FF',
-            insetIconURL: jg3dInsetExtensionIcon,
-            description: 'Use the magic of 3D to spice up your project.',
             featured: true
         },
         {
@@ -1145,14 +1153,6 @@ if (IsLocal || IsLiveTests) {
             customInsetColor: '#66B8FF',
             tags: ['penguinmod', 'packager'],
             description: 'In development. Do extra things in packaged applications that you can\'t do in the website!',
-            featured: true
-        },
-        {
-            name: 'the doo doo extension',
-            extensionId: 'jgDooDoo',
-            iconURL: defaultExtensionIcon,
-            tags: ['penguinmod'],
-            description: 'dr bob eae',
             featured: true
         },
         {
