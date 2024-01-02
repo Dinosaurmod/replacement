@@ -143,9 +143,6 @@ import pmControlsExpansionExtensionIcon from './penguinmod/extensions/controls_e
 import pmSensingExpansionExtensionIcon from './penguinmod/extensions/sensing_expanded.png';
 import pmOperatorsExpansionExtensionIcon from './penguinmod/extensions/operators_expanded.png';
 
-// other stuff (not official by penguinmod)
-import PenguinmodThumb from 'https://dinosaurmod.github.io/src/lib/libraries/extensions/penguinmod/unofficial-icons/penguinmod-icon.svg';
-
 // jg: default icon if you are too lazy to make one and you want me to make one instead lololololololol
 // gsa: ololololololo
 import defaultExtensionIcon from './penguinmod/extensions/placeholder.png';
@@ -317,7 +314,7 @@ const menuItems = [
         extensionId: 'jwStructs',
         tags: ['penguinmod'],
         iconURL: jwStructsExtensionIcon,
-        insetIconURL: PenguinmodThumb,
+        
         customInsetColor: '#00c3ff',
         description: (
             <FormattedMessage
@@ -343,7 +340,7 @@ const menuItems = [
         extensionId: 'pmCamera',
         iconURL: pmCameraExtensionIcon,
         tags: ['penguinmod'],
-        insetIconURL: PenguinmodThumb,
+        
         customInsetColor: '#00c3ff',
         description: (
             <FormattedMessage
@@ -360,7 +357,7 @@ const menuItems = [
         extensionId: 'jgFiles',
         iconURL: filesOldExtensionIcon,
         tags: ['penguinmod'],
-        insetIconURL: PenguinmodThumb,
+        
         customInsetColor: '#00c3ff',
         description: 'Basic blocks for files.',
         featured: true
@@ -437,7 +434,7 @@ const menuItems = [
         extensionId: 'jgChristmas',
         description: 'use christmas particles',
         tags: ['penguinmod'],
-        insetIconURL: PenguinmodThumb,
+        
         customInsetColor: '#00c3ff',
         iconURL: defaultExtensionIcon,
         featured: true
@@ -456,7 +453,7 @@ const menuItems = [
         extensionId: 'jgExtendedAudio',
         iconURL: jgExtendedAudioExtensionIcon,
         tags: ['penguinmod', 'categoryexpansion'],
-        insetIconURL: PenguinmodThumb,
+        
         customInsetColor: '#00c3ff',
         description: 'Free speed and pitch control, starting sounds at certain positions, stopping sounds, etc.',
         featured: true
@@ -466,7 +463,7 @@ const menuItems = [
         extensionId: 'pmMotionExpansion',
         iconURL: pmMotionExpansionExtensionIcon,
         tags: ['penguinmod', 'categoryexpansion'],
-        insetIconURL: PenguinmodThumb,
+        
         customInsetColor: '#00c3ff',
         description: "More small motion blocks for movement or collision.",
         featured: true,
@@ -495,7 +492,7 @@ const menuItems = [
         extensionId: 'pmEventsExpansion',
         iconURL: pmEventsExpansionExtensionIcon,
         tags: ['penguinmod', 'categoryexpansion'],
-        insetIconURL: PenguinmodThumb,
+        
         customInsetColor: '#00c3ff',
         description: "More events for sending & receiving information, notifing specific sprites or better control when things should happen.",
         featured: true,
@@ -506,7 +503,7 @@ const menuItems = [
         extensionId: 'pmControlsExpansion',
         iconURL: pmControlsExpansionExtensionIcon,
         tags: ['penguinmod', 'categoryexpansion'],
-        insetIconURL: PenguinmodThumb,
+        
         customInsetColor: '#00c3ff',
         description: "More control blocks for animations, complex systems or cleaner one-time use blocks.",
         featured: true,
@@ -525,7 +522,7 @@ const menuItems = [
         name: 'Sensing Expansion',
         extensionId: 'pmSensingExpansion',
         iconURL: pmSensingExpansionExtensionIcon,
-        insetIconURL: PenguinmodThumb,
+        
         customInsetColor: '#00c3ff',
         tags: ['penguinmod', 'categoryexpansion'],
         description: "More sensing blocks for specific use cases or interacting with the user's device.",
@@ -536,7 +533,7 @@ const menuItems = [
         name: 'Operators Expansion',
         extensionId: 'pmOperatorsExpansion',
         iconURL: pmOperatorsExpansionExtensionIcon,
-        insetIconURL: PenguinmodThumb,
+        
         customInsetColor: '#00c3ff',
         tags: ['penguinmod', 'categoryexpansion'],
         description: 'More operators like nand, nor, character code to character, reading multiple lined text line by line, etc.',
@@ -546,7 +543,7 @@ const menuItems = [
         name: 'Cats',
         extensionId: 'https://extensions.penguinmod.com/extensions/Gen1x/CATS.js',
         tags: ['penguinmod'],
-        insetIconURL: PenguinmodThumb,
+        
         customInsetColor: '#00c3ff',
         iconURL: 'https://extensions.penguinmod.com/images/Gen1x/cats.png',
         description: "Blocks related to cats.",
@@ -557,7 +554,7 @@ const menuItems = [
         name: 'JSON',
         extensionId: 'jgJSON',
         iconURL: jgJSONExtensionIcon,
-        insetIconURL: PenguinmodThumb,
+        
         customInsetColor: '#00c3ff',
         tags: ['penguinmod'],
         description: 'Blocks for handling JSON objects and Arrays.',
@@ -576,7 +573,7 @@ const menuItems = [
         name: 'Custom Styles',
         extensionId: 'shovelcss',
         iconURL: theshovelCustomStylesIcon,
-        insetIconURL: PenguinmodThumb,
+        
         customInsetColor: '#00c3ff',
         tags: ['penguinmod'],
         description: 'Customize the appearance of variable monitors and prompts in your project.',
@@ -621,7 +618,7 @@ const menuItems = [
         description: 'Smoothly animating values using different easing functions and directions.',
         iconURL: 'https://extensions.turbowarp.org/images/JeremyGamer13/tween.svg',
         tags: ['penguinmod'],
-        insetIconURL: PenguinmodThumb,
+        
         customInsetColor: '#00c3ff',
         featured: true
     },
@@ -631,7 +628,7 @@ const menuItems = [
         description: 'Have sprites & clones follow behind other sprites & clones by an offset, like RPG party members.',
         iconURL: 'https://distrot.github.io/static/assets/ff2dc3c9ffca9e8097e82e3ff64b5955.png',
         tags: ['penguinmod'],
-        insetIconURL: PenguinmodThumb,
+        
         customInsetColor: '#00c3ff',
         featured: true
     },
@@ -642,7 +639,7 @@ const menuItems = [
         tags: ['penguinmod'],
         description: 'Apply visual effects to the entire stage.',
         extDeveloper: 'TheShovel',
-        insetIconURL: PenguinmodThumb,
+        
         customInsetColor: '#00c3ff',
         featured: true
     },
@@ -692,7 +689,7 @@ const menuItems = [
         extensionId: 'jgTimers',
         iconURL: jgTimersExtensionIcon,
         tags: ['penguinmod'],
-        insetIconURL: PenguinmodThumb,
+        
         customInsetColor: '#00c3ff',
         description: 'Create different timers you can control seperately.',
         eventSubmittor: 'Arrow',
@@ -714,7 +711,7 @@ const menuItems = [
         extensionId: 'tempVars',
         iconURL: gsaTempVariablesExtensionIcon,
         tags: ['penguinmod'],
-        insetIconURL: PenguinmodThumb,
+        
         customInsetColor: '#00c3ff',
         description: 'Create variables for use in one block stack. Useful to not clutter the variable list with variables you only use once.',
         credits: 'LilyMakesThings',
@@ -735,7 +732,7 @@ const menuItems = [
         extensionId: 'jgRuntime',
         tags: ['penguinmod'],
         iconURL: jgRuntimeExtensionIcon,
-        insetIconURL: PenguinmodThumb,
+        
         customInsetColor: '#00c3ff',
         description: 'Blocks for updating Scratch objects like the stage and sprites.',
         credits: 'TheShovel, showierdata9978',
@@ -770,7 +767,7 @@ const menuItems = [
         tags: ['penguinmod'],
         description: 'Store data after PenguinMod has already been closed out. Basic Server Storage is also included.',
         eventSubmittor: 'Fir & silvxrcat',
-        insetIconURL: PenguinmodThumb,
+        
         customInsetColor: '#00c3ff',
         featured: true
     },
@@ -833,7 +830,7 @@ const menuItems = [
         extensionId: 'shovellzcompresss',
         iconURL: theshovelLzCompressIcon,
         tags: ['penguinmod'],
-        insetIconURL: PenguinmodThumb,
+        
         customInsetColor: '#00c3ff',
         description: 'Compress and decompress text using lz-string.',
         extDeveloper: 'TheShovel',
@@ -844,7 +841,7 @@ const menuItems = [
         extensionId: 'jgPrism',
         tags: ['penguinmod'],
         iconURL: jgPrismExtensionIcon,
-        insetIconURL: PenguinmodThumb,
+        
         customInsetColor: '#00c3ff',
         description: 'Blocks for specific use-cases or major convenience.',
         featured: true
@@ -872,7 +869,7 @@ const menuItems = [
         name: 'Recording',
         extensionId: 'https://extensions.penguinmod.com/extensions/SharkPool/Recording.js',
         tags: ['penguinmod'],
-        insetIconURL: PenguinmodThumb,
+        
         customInsetColor: '#00c3ff',
         iconURL: 'https://extensions.penguinmod.com/images/SharkPool/Recording.svg',
         description: 'Record your voice while you run your projects!',
@@ -887,7 +884,7 @@ const menuItems = [
         tags: ['penguinmod'],
         description: 'Blocks to place and move around frames that contain HTML content or websites.',
         featured: true,
-        insetIconURL: PenguinmodThumb,
+        
         customInsetColor: '#00c3ff',
         internetConnectionRequired: true
     },
@@ -896,7 +893,7 @@ const menuItems = [
         extensionId: 'shovelColorPicker',
         iconURL: theshovelColorPickerIcon,
         tags: ['penguinmod'],
-        insetIconURL: PenguinmodThumb,
+        
         customInsetColor: '#00c3ff',
         description: 'Allow the user to choose a color using the built-in color picker, so you don\'t need to make your own.',
         extDeveloper: 'TheShovel',
@@ -907,7 +904,7 @@ const menuItems = [
         extensionId: 'colors',
         iconURL: gsaColorUtilExtensionIcon,
         tags: ['penguinmod'],
-        insetIconURL: PenguinmodThumb,
+        
         customInsetColor: '#00c3ff',
         description: 'Converters for Hex, RGB, HSV and Decimal colors and other color related things.',
         featured: true
@@ -923,7 +920,7 @@ const menuItems = [
         extensionId: 'jwProto',
         iconURL: jwProtoExtensionIcon,
         tags: ['penguinmod'],
-        insetIconURL: PenguinmodThumb,
+        
         customInsetColor: '#00c3ff',
         description: (
             <FormattedMessage
@@ -946,7 +943,7 @@ const menuItems = [
         extensionId: 'iygPerlin',
         tags: ['penguinmod'],
         iconURL: iygPerlinNoiseExtensionIcon,
-        insetIconURL: PenguinmodThumb,
+        
         customInsetColor: '#00c3ff',
         description: (
             <FormattedMessage
@@ -961,7 +958,7 @@ const menuItems = [
         name: 'Sound Waves',
         extensionId: 'https://extensions.penguinmod.com/extensions/SharkPool/Sound-Waves.js',
         iconURL: 'https://extensions.penguinmod.com/images/SharkPool/Sound-Waves.svg',
-        insetIconURL: PenguinmodThumb,
+        
         customInsetColor: '#00c3ff',
         tags: ['penguinmod'],
         description: 'Make sounds with oscillators!',
@@ -1074,7 +1071,7 @@ const menuItems = [
         extensionId: 'jgDooDoo',
         iconURL: defaultExtensionIcon,
         tags: ['penguinmod', 'forbidden'],
-        insetIconURL: PenguinmodThumb,
+        
         customInsetColor: '#00c3ff',
         description: 'a joke extension.',
         featured: true
@@ -1083,7 +1080,7 @@ const menuItems = [
         name: 'Scratch Authentication',
         extensionId: 'jgScratchAuthenticate',
         iconURL: jgScratchAuthExtensionIcon,
-        insetIconURL: PenguinmodThumb,
+        
         customInsetColor: '#00c3ff',
         tags: ['penguinmod'],
         description: "Get a user's scratch name to prove they are a real scratch user.",
@@ -1093,7 +1090,7 @@ const menuItems = [
         name: 'Save Data',
         extensionId: 'https://dinosaurmod.github.io/savedata.js',
         iconURL: 'https://snail-ide.js.org/static/assets/14ea6745b6f8a3c8e3cb4d3392f04573.svg',
-        insetIconURL: PenguinmodThumb,
+        
         collaborator: 'Snail IDE (Slighty modified from their extension)',
         customInsetColor: '#00c3ff',
         tags: ['penguinmod','turbowarp'],
@@ -1104,7 +1101,7 @@ const menuItems = [
         name: 'JavaScript',
         extensionId: 'jgJavascript',
         iconURL: jgJavascriptExtensionIcon,
-        insetIconURL: PenguinmodThumb,
+        
         customInsetColor: '#00c3ff',
         tags: ['penguinmod', 'programminglanguage'],
         description: 'Run your own custom code written in JavaScript!',
